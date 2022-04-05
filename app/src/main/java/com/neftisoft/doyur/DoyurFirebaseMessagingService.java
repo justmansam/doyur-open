@@ -19,7 +19,7 @@ import java.util.Objects;
 @SuppressLint("MissingFirebaseInstanceTokenRefresh")
 public class DoyurFirebaseMessagingService extends FirebaseMessagingService {
 
-    public static final int VISIBILITY_PUBLIC = 999;
+    public static final int VISIBILITY_PUBLIC = 9999;
     private static final String CHANNEL_ID = "987321";
     String msgTxt;
     String msgTtl;
