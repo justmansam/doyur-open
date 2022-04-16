@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/chat_background_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:background="#43A047" />
+
+    <ImageView
+        android:id="@+id/imageView111"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/custom_chat_screen_background_tint" />
+
+    <FrameLayout
+        android:id="@+id/to_whom_I_may_chat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:elevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingEnd="8dp"
+            android:clickable="true"
+            android:onClick="gotoProfileFromChat">
+
+            <ImageView
+                android:id="@+id/back_button_imageView"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/custom_signup_images_background"
+                app:srcCompat="@drawable/back_arrow_icon"
+                android:clickable="true"
+                android:onClick="getBack"/>
+
+            <RelativeLayout
+                android:id="@+id/chat_room_avatar_layout"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@+id/back_button_imageView"
+                android:background="@drawable/avatar_icon">
+
+                <ImageView
+                    android:id="@+id/chat_room_avatar_imageview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true" />
+
+                <ImageView
+                    android:id="@+id/chat_room_avatar_frame_imageview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/custom_avatar_background_white" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/chat_room_user_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_alignTop="@+id/chat_room_avatar_layout"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/chat_room_avatar_layout"
+                android:fontFamily="sans-serif-medium"
+                android:text=""
+                android:textColor="@android:color/darker_gray"
+                android:textSize="24sp"
+                android:requiresFadingEdge="horizontal"
+                android:fadingEdgeLength="48dp"
+                android:singleLine="true"
+                android:ellipsize="none" />
+
+            <TextView
+                android:id="@+id/chat_room_user_location_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_below="@+id/chat_room_user_name_textview"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="8dp"
+                android:layout_toEndOf="@+id/chat_room_avatar_layout"
+                android:fontFamily="sans-serif-small"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@android:color/darker_gray"
+                android:textSize="12sp"
+                android:requiresFadingEdge="horizontal"
+                android:fadingEdgeLength="48dp"
+                android:singleLine="true"
+                android:ellipsize="none" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <ListView
+        android:id="@+id/messageListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/to_whom_I_may_chat"
+        android:layout_marginTop="1dp"
+        android:layout_above="@+id/message_status_textview"
+        android:stackFromBottom="true"
+        android:divider="@android:color/transparent"
+        android:transcriptMode="alwaysScroll"
+        tools:listitem="@layout/item_chat_other"/>
+
+    <TextView
+        android:id="@+id/message_status_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/chat_screen_divider"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_chat_msg_status_pending_background"
+        android:fontFamily="@font/bubblegum_sans"
+        android:paddingStart="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="3dp"
+        android:paddingEnd="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="2dp"
+        tools:text="Gönderildi \u2713"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/chat_screen_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/linearLayout"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="?android:attr/listDivider" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingEnd="8dp"
+        android:paddingRight="8dp"
+        android:paddingStart="8dp"
+        android:paddingLeft="8dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/photoPickerButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/custom_signup_images_background"
+            android:clickable="true"
+            app:srcCompat="@drawable/settings_set_avatar" />
+
+        <EditText
+            android:id="@+id/messageEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_chat_edittext_frame"
+            android:hint="Bir mesaj yaz"
+            android:paddingTop="8dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:text=""
+            android:inputType="textCapSentences|textMultiLine"
+            android:maxLines="4"/>
+
+        <ImageView
+            android:id="@+id/sendButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/custom_signup_images_background"
+            android:onClick="sendMessage"
+            app:srcCompat="@drawable/send_icon" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/chat_progress_circle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone"/>
+</RelativeLayout>
