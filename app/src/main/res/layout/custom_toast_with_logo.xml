@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_toast_container_with_logo"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="32dp">
+
+    <ImageView
+        android:id="@+id/toast_background_with_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/toast_image_with_logo"
+        android:layout_marginBottom="-8dp"
+        android:src="@drawable/custom_main_button" />
+
+    <ImageView
+        android:id="@+id/toast_image_with_logo"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/doyur_notification_icon" />
+
+    <TextView
+        android:id="@+id/toast_text_with_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toast_image_with_logo"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="-2dp"
+        android:layout_toEndOf="@+id/toast_image_with_logo"
+        android:layout_toRightOf="@+id/toast_image_with_logo"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textColor="#FAFAFA" />
+</RelativeLayout>
