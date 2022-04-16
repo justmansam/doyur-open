@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/daily_foods_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:stackFromBottom="false"
+        android:transcriptMode="disabled"
+        android:scrollbars="none"
+        tools:listitem="@layout/item_food"
+        android:paddingBottom="80dp"
+        android:clipToPadding="false">
+    </ListView>
+
+    <TextView
+        android:id="@+id/refresh_daily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:layout_centerHorizontal="true"
+        android:text="Yenile"
+        android:textColor="@android:color/darker_gray"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/custom_map_switch_background"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/tab_daily_progress_circle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tab_daily_no_food_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:text="Bu konumda hiç günlük yemek yok!\n\n\nHarita modu ile yakındaki diğer yemekleri görün!\nveya\nYemeğinizin resmini yükleyin ve satın!"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:visibility="gone"/>
+</RelativeLayout>
