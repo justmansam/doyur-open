@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BottomFragmentDesire"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/top_cap_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="8dp">
+
+        <FrameLayout
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:paddingEnd="8dp"
+            android:paddingRight="8dp"
+            android:paddingStart="8dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="6dp"
+            android:paddingBottom="6dp"
+            android:elevation="8dp">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/search_food_edittext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/custom_chat_edittext_frame"
+                    android:textCursorDrawable="@drawable/color_cursor"
+                    android:hint="Aradığın yemeğin adını yaz"
+                    android:paddingTop="8dp"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="8dp"
+                    android:inputType="text"
+                    android:text=""
+                    android:maxLines="1"/>
+
+                <ImageButton
+                    android:id="@+id/search_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/custom_signup_images_background"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/ic_search" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/desired_foods_cap_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            android:background="#FFF"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/desired_foods_heading_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="16sp"
+                android:text="Yemek İstekleri"
+                android:textAllCaps="true"
+                android:textColor="#80000000" />
+        </FrameLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_cap_layout"
+        android:layout_alignParentBottom="true">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_map_switch_background"
+            android:elevation="4dp">
+
+            <Switch
+                android:id="@+id/desire_map_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yemek İstekleri "
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"/>
+        </FrameLayout>
+
+        <ListView
+            android:id="@+id/food_search_result_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:scrollbars="none"
+            android:divider="@android:color/transparent"
+            tools:listitem="@layout/item_food"
+            android:paddingBottom="64dp"
+            android:clipToPadding="false">
+        </ListView>
+
+        <ListView
+            android:id="@+id/desired_foods_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:scrollbars="none"
+            android:divider="@android:color/transparent"
+            android:transcriptMode="disabled"
+            tools:listitem="@layout/item_desired"
+            android:paddingBottom="64dp"
+            android:clipToPadding="false"
+            android:visibility="gone"/>
+
+        <ProgressBar
+            android:id="@+id/desire_food_progress_circle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/desire_food_no_food_found_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:text="Aradığınız isimde yemek bulunamadı!\nBaşka yemekleri deneyin..."
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/desire_food_no_food_desired_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:fontFamily="sans-serif-medium"
+            android:text="Hiç yemek isteği yapılmamış!\nSiz bir istek yapın..."
+            android:textSize="16sp"
+            android:textColor="@android:color/darker_gray"
+            android:visibility="gone"/>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab_add_desire_food"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/MyMaterialTheme"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="24dp"
+            android:elevation="8dp"
+            app:iconTint="@color/colorPrimary"
+            android:text="İstek Yap"
+            android:textColor="@color/colorPrimary"
+            app:backgroundTint="@color/gnt_white"
+            app:icon="@drawable/ic_iwant"/>
+    </RelativeLayout>
+</RelativeLayout>
