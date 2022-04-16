@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/cap_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF"
+        android:elevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back_button_imageView"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/custom_signup_images_background"
+                app:srcCompat="@drawable/back_arrow_icon"
+                android:clickable="true"
+                android:onClick="getBack"/>
+
+            <TextView
+                android:id="@+id/profile_heading_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="16sp"
+                android:text="Kullanıcı Bilgileri"
+                android:textColor="@android:color/darker_gray"
+                android:textAllCaps="true"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        android:layout_below="@+id/cap_layout"
+        android:layout_above="@+id/profile_ad_view">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="40dp">
+
+            <RelativeLayout
+                android:id="@+id/profile_avatar_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/profile_avatar_view"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_alignStart="@+id/profile_avatar_frame_view"
+                    android:layout_alignLeft="@+id/profile_avatar_frame_view"
+                    android:layout_alignTop="@+id/profile_avatar_frame_view"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    app:srcCompat="@drawable/avatar_icon" />
+
+                <ImageView
+                    android:id="@+id/profile_avatar_frame_view"
+                    android:layout_width="112dp"
+                    android:layout_height="112dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="22dp"
+                    android:layout_toEndOf="@+id/profile_new_avatar"
+                    android:layout_toRightOf="@+id/profile_new_avatar"
+                    android:background="@drawable/custom_avatar_background" />
+
+                <ImageView
+                    android:id="@+id/profile_new_avatar"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignBottom="@+id/profile_avatar_view"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/custom_textview_background"
+                    android:clickable="true"
+                    android:onClick="changeAvatar"
+                    app:srcCompat="@drawable/settings_set_avatar" />
+
+                <TextView
+                    android:id="@+id/profile_change_avatar"
+                    android:layout_width="112dp"
+                    android:layout_height="24dp"
+                    android:layout_alignBottom="@+id/profile_new_avatar"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="-6dp"
+                    android:paddingTop="7dp"
+                    android:gravity="end"
+                    android:clickable="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="changeAvatar"
+                    android:text="Resmini güncelle"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    android:textColor="@android:color/darker_gray" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider_before_username"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?android:attr/listDivider"/>
+
+            <RelativeLayout
+                android:id="@+id/profile_vitals_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+                <ImageView
+                    android:id="@+id/profile_user_name_imageview"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/custom_textview_background"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/profile_user_name_icon" />
+
+                <TextView
+                    android:id="@+id/profile_user_name_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_alignTop="@+id/profile_user_name_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toEndOf="@+id/profile_user_name_imageview"
+                    android:layout_toRightOf="@+id/profile_user_name_imageview"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:requiresFadingEdge="horizontal"
+                    android:fadingEdgeLength="48dp"
+                    android:singleLine="true"
+                    android:ellipsize="none" />
+
+                <TextView
+                    android:id="@+id/profile_change_username"
+                    android:layout_width="112dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/profile_user_name_textview"
+                    android:layout_alignEnd="@+id/profile_user_name_textview"
+                    android:layout_alignRight="@+id/profile_user_name_textview"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:paddingTop="1dp"
+                    android:gravity="end"
+                    android:clickable="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="changeUsername"
+                    android:text="Adını değiştir"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    android:textColor="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/profile_new_user_name_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:padding="16dp"
+                    android:background="@drawable/custom_settings_frame"
+                    android:gravity="center_vertical"
+                    android:hint="Yeni kullanıcı adınızı yazın"
+                    android:textSize="16sp"
+                    android:visibility="gone"
+                    android:inputType="textPersonName|textCapWords"/>
+
+                <Button
+                    android:id="@+id/profile_no_tonew_username_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/profile_new_user_name_textview"
+                    android:layout_alignStart="@+id/profile_new_user_name_textview"
+                    android:layout_alignLeft="@+id/profile_new_user_name_textview"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/custom_settings_signout_button_frame"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:onClick="cancelNewUsername"
+                    android:text="İptal"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/darker_gray"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/profile_ok_tonew_username_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/profile_new_user_name_textview"
+                    android:layout_alignEnd="@+id/profile_new_user_name_textview"
+                    android:layout_alignRight="@+id/profile_new_user_name_textview"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/custom_main_button"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:onClick="saveNewUsername"
+                    android:text="Kaydet"
+                    android:textAllCaps="false"
+                    android:textColor="#FAFAFA"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/profile_user_location_imageview"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/profile_user_name_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/custom_textview_background"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/profile_user_location_icon" />
+
+                <TextView
+                    android:id="@+id/profile_user_location_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_alignTop="@+id/profile_user_location_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toEndOf="@+id/profile_user_location_imageview"
+                    android:layout_toRightOf="@+id/profile_user_location_imageview"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:requiresFadingEdge="horizontal"
+                    android:fadingEdgeLength="48dp"
+                    android:singleLine="true"
+                    android:ellipsize="none" />
+
+                <TextView
+                    android:id="@+id/profile_change_location"
+                    android:layout_width="112dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/profile_user_location_imageview"
+                    android:layout_alignEnd="@+id/profile_user_location_textview"
+                    android:layout_alignRight="@+id/profile_user_location_textview"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:paddingTop="1dp"
+                    android:gravity="end"
+                    android:clickable="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="changeLocation"
+                    android:text="Konumu değiştir"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    android:textColor="@android:color/darker_gray"/>
+
+                <TextView
+                    android:id="@+id/profile_change_location_heading_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Konumunuzu girin"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/profile_new_location_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_change_location_heading_textview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone" >
+
+                    <Spinner
+                        android:id="@+id/profile_city_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:id="@+id/profile_divider_between_city_and_county_spinner"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="?android:attr/listDivider" />
+
+                    <Spinner
+                        android:id="@+id/profile_county_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <View
+                        android:id="@+id/profile_divider_between_county_and_nbhood_spinner"
+                        android:layout_width="1dp"
+                        android:layout_height="match_parent"
+                        android:background="?android:attr/listDivider" />
+
+                    <Spinner
+                        android:id="@+id/profile_neighborhood_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/profile_no_tonew_location_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/profile_new_location_layout"
+                    android:layout_alignStart="@+id/profile_new_location_layout"
+                    android:layout_alignLeft="@+id/profile_new_location_layout"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/custom_settings_signout_button_frame"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:onClick="cancelNewLocation"
+                    android:text="İptal"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/darker_gray"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/profile_user_email_imageview"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/profile_user_location_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/custom_textview_background"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/profile_user_email_icon" />
+
+                <TextView
+                    android:id="@+id/profile_user_email_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_alignTop="@+id/profile_user_email_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toEndOf="@+id/profile_user_email_imageview"
+                    android:layout_toRightOf="@+id/profile_user_email_imageview"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+                    android:requiresFadingEdge="horizontal"
+                    android:fadingEdgeLength="48dp"
+                    android:singleLine="true"
+                    android:ellipsize="none"/>
+
+                <TextView
+                    android:id="@+id/profile_change_email"
+                    android:layout_width="112dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/profile_user_email_textview"
+                    android:layout_alignEnd="@+id/profile_user_email_textview"
+                    android:layout_alignRight="@+id/profile_user_email_textview"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:paddingTop="1dp"
+                    android:gravity="end"
+                    android:clickable="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="changeEmail"
+                    android:text="E-postanı değiştir"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    android:textColor="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/profile_new_email_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:padding="16dp"
+                    android:background="@drawable/custom_settings_frame"
+                    android:textSize="16sp"
+                    android:inputType="textEmailAddress"
+                    android:visibility="gone"
+                    android:hint="Yeni e-posta adresinizi yazın" />
+
+                <Button
+                    android:id="@+id/profile_no_tonew_email_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/profile_new_email_edittext"
+                    android:layout_alignStart="@+id/profile_new_email_edittext"
+                    android:layout_alignLeft="@+id/profile_new_email_edittext"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/custom_settings_signout_button_frame"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:onClick="cancelNewEmail"
+                    android:text="İptal"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/darker_gray"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/profile_ok_tonew_email_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/profile_new_email_edittext"
+                    android:layout_alignEnd="@+id/profile_new_email_edittext"
+                    android:layout_alignRight="@+id/profile_new_email_edittext"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/custom_main_button"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:onClick="saveNewEmail"
+                    android:text="Kaydet"
+                    android:textAllCaps="false"
+                    android:textColor="#FAFAFA"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/profile_user_password_imageview"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/profile_user_email_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/custom_textview_background"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/profile_user_password_icon" />
+
+                <TextView
+                    android:id="@+id/profile_user_password_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_alignTop="@+id/profile_user_password_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toEndOf="@+id/profile_user_password_imageview"
+                    android:layout_toRightOf="@+id/profile_user_password_imageview"
+                    android:text="* * * * * * * * * * *"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/profile_change_password"
+                    android:layout_width="112dp"
+                    android:layout_height="24dp"
+                    android:layout_below="@+id/profile_user_password_textview"
+                    android:layout_alignEnd="@+id/profile_user_password_textview"
+                    android:layout_alignRight="@+id/profile_user_password_textview"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:paddingTop="1dp"
+                    android:gravity="end"
+                    android:clickable="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="changePassword"
+                    android:text="Şifreni değiştir"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    android:textColor="@android:color/darker_gray" />
+
+                <EditText
+                    android:id="@+id/profile_password_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:padding="16dp"
+                    android:background="@drawable/custom_settings_frame"
+                    android:textSize="16sp"
+                    android:hint="Yeni şifrenizi girin"
+                    android:inputType="textPassword"
+                    android:visibility="gone"/>
+
+                <EditText
+                    android:id="@+id/profile_password_again_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_below="@+id/profile_password_textview"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/custom_settings_frame"
+                    android:hint="Yeni şifrenizi tekrar girin"
+                    android:inputType="textPassword"
+                    android:padding="16dp"
+                    android:textSize="16sp"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/profile_no_tonew_password_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/profile_password_again_textview"
+                    android:layout_alignStart="@+id/profile_password_again_textview"
+                    android:layout_alignLeft="@+id/profile_password_again_textview"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/custom_settings_signout_button_frame"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:onClick="cancelNewPassword"
+                    android:text="İptal"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/darker_gray"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/profile_ok_tonew_password_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/profile_password_again_textview"
+                    android:layout_alignEnd="@+id/profile_password_again_textview"
+                    android:layout_alignRight="@+id/profile_password_again_textview"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/custom_main_button"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:onClick="saveNewPassword"
+                    android:text="Kaydet"
+                    android:textAllCaps="false"
+                    android:textColor="#FAFAFA"
+                    android:visibility="gone" />
+
+                <ImageView
+                    android:id="@+id/profile_user_location_permission_imageview"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_below="@+id/profile_user_password_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/custom_textview_background"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    app:srcCompat="@drawable/location_permission_icon" />
+
+                <Switch
+                    android:id="@+id/profile_user_location_permission_switch"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_alignTop="@+id/profile_user_location_permission_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toEndOf="@+id/profile_user_location_permission_imageview"
+                    android:layout_toRightOf="@+id/profile_user_location_permission_imageview"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:onClick="askForLocationPermission"
+                    android:text="Konum kapalı !"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/profile_reporting_relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/profile_reporting_edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:gravity="top"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:padding="16dp"
+                    android:background="@drawable/custom_settings_frame"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Şikayetinizi yazın"
+                    android:textSize="16sp"
+                    android:inputType="textCapSentences" />
+
+                <Button
+                    android:id="@+id/profile_cancel_report_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/profile_reporting_edittext"
+                    android:layout_alignStart="@+id/profile_reporting_edittext"
+                    android:layout_alignLeft="@+id/profile_reporting_edittext"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/custom_settings_signout_button_frame"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:onClick="profileCancelReport"
+                    android:text="İptal"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/darker_gray" />
+
+                <Button
+                    android:id="@+id/profile_send_report_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/profile_reporting_edittext"
+                    android:layout_alignEnd="@+id/profile_reporting_edittext"
+                    android:layout_alignRight="@+id/profile_reporting_edittext"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="24dp"
+                    android:background="@drawable/custom_main_button"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center"
+                    android:onClick="profileSendReport"
+                    android:text="Gönder"
+                    android:textAllCaps="false"
+                    android:textColor="#FAFAFA" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider_before_messages"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <Button
+                android:id="@+id/profile_user_messages_button"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/custom_main_button"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:onClick="gotoChatLobby"
+                android:text="Mesajlar"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:textColor="#FAFAFA"/>
+
+            <View
+                android:id="@+id/divider_before_store"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?android:attr/listDivider"/>
+
+            <RelativeLayout
+                android:id="@+id/profile_foods_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+                <ImageView
+                    android:id="@+id/profile_user_store_imageview"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/custom_textview_background"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/fab_store_icon" />
+
+                <TextView
+                    android:id="@+id/profile_user_store_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_alignTop="@+id/profile_user_store_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_toEndOf="@+id/profile_user_store_imageview"
+                    android:layout_toRightOf="@+id/profile_user_store_imageview"
+                    android:layout_toStartOf="@+id/profile_goto_store"
+                    android:layout_toLeftOf="@+id/profile_goto_store"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:requiresFadingEdge="horizontal"
+                    android:fadingEdgeLength="48dp"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:id="@+id/profile_goto_store"
+                    android:layout_width="64dp"
+                    android:layout_height="32dp"
+                    android:layout_alignBottom="@+id/profile_user_store_imageview"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginBottom="0dp"
+                    android:clickable="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="end"
+                    android:onClick="gotoStoreFromProfile"
+                    android:paddingTop="9dp"
+                    android:text="Düzenle"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+
+                <RelativeLayout
+                    android:id="@+id/profile_daily_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_user_store_imageview"
+                    android:layout_marginTop="40dp">
+
+                    <ImageView
+                        android:id="@+id/profile_user_daily_imageview"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@drawable/custom_textview_background"
+                        android:gravity="center"
+                        app:srcCompat="@drawable/fab_daily_ic" />
+
+                    <TextView
+                        android:id="@+id/profile_user_daily_alert_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_alignTop="@+id/profile_user_daily_imageview"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_toEndOf="@+id/profile_user_daily_imageview"
+                        android:layout_toRightOf="@+id/profile_user_daily_imageview"
+                        android:text="Günlük yemek eklenmemiş!"
+                        android:textColor="@android:color/darker_gray"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:visibility="gone"/>
+
+                    <RelativeLayout
+                        android:id="@+id/profile_user_daily_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_alignTop="@+id/profile_user_daily_imageview"
+                        android:layout_toEndOf="@+id/profile_user_daily_imageview"
+                        android:layout_toRightOf="@+id/profile_user_daily_imageview"
+                        android:layout_marginTop="-6dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/profile_user_daily_image_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:id="@+id/profile_user_daily_frame_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/custom_avatar_background" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/profile_charity_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/profile_daily_layout"
+                    android:layout_marginTop="40dp">
+
+                    <ImageView
+                        android:id="@+id/profile_user_charity_imageview"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@drawable/custom_textview_background"
+                        android:gravity="center"
+                        app:srcCompat="@drawable/fab_soup_icon" />
+
+                    <TextView
+                        android:id="@+id/profile_user_charity_alert_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:layout_alignTop="@+id/profile_user_charity_imageview"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_toEndOf="@+id/profile_user_charity_imageview"
+                        android:layout_toRightOf="@+id/profile_user_charity_imageview"
+                        android:text="Askıda yemek eklenmemiş!"
+                        android:textColor="@android:color/darker_gray"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:visibility="gone"/>
+
+                    <RelativeLayout
+                        android:id="@+id/profile_user_charity_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_alignTop="@+id/profile_user_charity_imageview"
+                        android:layout_toEndOf="@+id/profile_user_charity_imageview"
+                        android:layout_toRightOf="@+id/profile_user_charity_imageview"
+                        android:layout_marginTop="-6dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/profile_user_charity_image_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <ImageView
+                            android:id="@+id/profile_user_charity_frame_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/custom_avatar_background" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider_before_rating"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <RelativeLayout
+                android:id="@+id/profile_reviews_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+                <ImageView
+                    android:id="@+id/profile_user_rating_imageview"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/custom_textview_background"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:onClick="gotoReviews"
+                    app:srcCompat="@drawable/profile_rate_review_icon" />
+
+                <LinearLayout
+                    android:id="@+id/profile_rating_review_linear_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:orientation="horizontal"
+                    android:layout_alignTop="@+id/profile_user_rating_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toEndOf="@+id/profile_user_rating_imageview"
+                    android:layout_toRightOf="@+id/profile_user_rating_imageview"
+                    android:clickable="true"
+                    android:onClick="gotoReviews">
+
+                    <TextView
+                        android:id="@+id/profile_user_rating_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:fontFamily="sans-serif-black"
+                        android:textSize="16sp"
+                        android:textColor="@android:color/darker_gray"/>
+                    <TextView
+                        android:id="@+id/profile_user_rate_count_textview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@android:color/darker_gray"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/profile_goto_reviews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:paddingTop="2dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:clickable="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_vertical"
+                    android:onClick="gotoReviews"
+                    android:text="Yorumları gör"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="12sp"
+                    android:textStyle="italic" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider_before_issue"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <RelativeLayout
+                android:id="@+id/profile_report_issue_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+                <ImageView
+                    android:id="@+id/profile_report_issue_imageview"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:background="@drawable/custom_textview_background"
+                    android:gravity="center"
+                    app:srcCompat="@drawable/profile_report_issue_icon" />
+
+                <TextView
+                    android:id="@+id/profile_report_issue_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_alignTop="@+id/profile_report_issue_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toEndOf="@+id/profile_report_issue_imageview"
+                    android:layout_toRightOf="@+id/profile_report_issue_imageview"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Sorun bildir !"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:onClick="reportIssue"/>
+
+                <TextView
+                    android:id="@+id/profile_report_profile_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_alignTop="@+id/profile_report_issue_imageview"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_toEndOf="@+id/profile_report_issue_imageview"
+                    android:layout_toRightOf="@+id/profile_report_issue_imageview"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Kullanıcıyı şikayet et !"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:onClick="reportProfile"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider_before_privacy_conditions"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <RelativeLayout
+                android:id="@+id/privacy_conditions_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp">
+
+                <TextView
+                    android:id="@+id/privacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:clickable="true"
+                    android:fontFamily="sans-serif-medium"
+                    android:onClick="toPrivacy"
+                    android:text="Gizlilik Politikası"
+                    android:textColor="@android:color/darker_gray" />
+                <TextView
+                    android:id="@+id/conditions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:layout_below="@+id/privacy"
+                    android:clickable="true"
+                    android:onClick="toConditions"
+                    android:text="Kullanım Koşulları"
+                    android:textColor="@android:color/darker_gray"
+                    android:fontFamily="sans-serif-medium" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/divider_before_exit"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="?android:attr/listDivider" />
+
+            <Button
+                android:id="@+id/profile_signout_button"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/custom_settings_signout_button_frame"
+                android:clickable="true"
+                android:onClick="signOut"
+                android:fontFamily="sans-serif-medium"
+                android:text="Çıkış Yap"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:textColor="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/profile_logo_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="32dp"
+                android:gravity="center"
+                android:text="doyur"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="80sp"
+                android:fontFamily="@font/bubblegum_sans"/>
+
+            <TextView
+                android:id="@+id/profile_version_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="@font/bubblegum_sans"
+                android:text="v3.01.6"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_ad_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-1548831853802422/1697271693">
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>
