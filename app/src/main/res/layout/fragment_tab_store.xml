@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:id="@+id/store_foods_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:stackFromBottom="false"
+        android:transcriptMode="disabled"
+        android:scrollbars="none"
+        tools:listitem="@layout/item_store"
+        android:paddingBottom="88dp"
+        android:clipToPadding="false">
+    </ListView>
+
+    <ProgressBar
+        android:id="@+id/tab_store_progress_circle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tab_store_no_store_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:text="Bu konumda hiç mutfak yok!\n\n\nHarita modu ile yakındaki diğer mutfakları görün!\nveya\nMutfağınızı oluşturarak hemen sipariş almaya başlayın!"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        android:visibility="gone"/>
+</RelativeLayout>
