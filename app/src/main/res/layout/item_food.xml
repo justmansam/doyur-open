@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/foodItemImageView">
+
+        <ImageView
+            android:id="@+id/photoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:background="#25000000"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/custom_imageview_background_2" />
+
+        <TextView
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/photoImageView"
+            android:layout_alignLeft="@+id/photoImageView"
+            android:layout_alignTop="@+id/photoImageView"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/custom_textview_background"
+            android:paddingStart="4dp"
+            android:paddingLeft="4dp"
+            android:paddingEnd="4dp"
+            android:paddingRight="4dp"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#FFFFFF"
+            tools:text="Name"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/uidTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameTextView"
+            android:layout_alignStart="@+id/nameTextView"
+            android:layout_alignLeft="@+id/nameTextView"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/keyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/uidTextView"
+            android:layout_alignStart="@+id/uidTextView"
+            android:layout_alignLeft="@+id/uidTextView"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/priceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/photoImageView"
+            android:layout_alignRight="@+id/photoImageView"
+            android:layout_alignBottom="@+id/photoImageView"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/custom_textview_price_background"
+            android:paddingStart="4dp"
+            android:paddingLeft="4dp"
+            android:paddingEnd="4dp"
+            android:paddingRight="4dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            tools:text="Price"
+            android:textSize="10sp"
+            android:textStyle="bold"/>
+    </RelativeLayout>
+</LinearLayout>
