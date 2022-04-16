@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chatLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:paddingBottom="2dp"
+    android:paddingRight="16dp"
+    android:paddingEnd="16dp"
+    android:paddingLeft="56dp"
+    android:paddingStart="56dp"
+    android:background="@android:color/transparent"
+    android:gravity="end">
+
+    <RelativeLayout
+        android:id="@+id/myChatBackgroundLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_chat_background2">
+
+        <TextView
+            android:id="@+id/myChatNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/message_content_layout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            tools:text="Name"
+            android:visibility="gone"/>
+
+        <RelativeLayout
+            android:id="@+id/message_content_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/myChatNameTextView"
+            android:layout_toRightOf="@+id/myChatNameTextView">
+
+            <TextView
+                android:id="@+id/myChatMessageTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:fontFamily="sans-serif-small"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                tools:text="Message" />
+
+            <TextView
+                android:id="@+id/myChatMessageUidTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/myChatItemKeyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/myChatPhotoImageView"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:maxWidth="400dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_alignParentTop="true"
+                android:cropToPadding="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/myChatTimeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="end"
+        android:text=""
+        android:textSize="10sp" />
+</LinearLayout>
