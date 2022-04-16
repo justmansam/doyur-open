@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:paddingBottom="32dp"
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/modal_offwhite_background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Yemeğiniz Yüklendi!"
+        android:textSize="16sp"
+        android:textColor="@color/colorPrimary"
+        android:fontFamily="sans-serif-medium">
+    </TextView>
+    <TextView
+        android:id="@+id/modal_info_daily_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="Yemeğinizin adını ve fiyatını eklemek ister misiniz?"
+        android:textSize="16sp"
+        android:textColor="@color/gnt_gray"
+        android:textAllCaps="false">
+    </TextView>
+    <TextView
+        android:id="@+id/modal_info_charity_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:text="Yemeğinizin adını eklemek ister misiniz?"
+        android:textSize="16sp"
+        android:textColor="@color/gnt_gray"
+        android:textAllCaps="false"
+        android:visibility="gone">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Yemeğin Adı:"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="sans-serif-medium">
+        </TextView>
+        <EditText
+            android:id="@+id/food_name_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Yemeğin adını yazın!"
+            android:inputType="text"
+            android:maxLength="40"
+            android:maxLines="1">
+        </EditText>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/modal_food_price_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Yemeğin Fiyatı:"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:fontFamily="sans-serif-medium">
+        </TextView>
+        <EditText
+            android:id="@+id/food_price_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Yemeğin fiyatını girin!"
+            android:inputType="number"
+            android:maxLines="1"
+            android:maxLength="4">
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/add_no_tag_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:theme="@style/MyMaterialTheme"
+            android:gravity="center"
+            android:elevation="8dp"
+            android:text="Hayır"
+            android:textAllCaps="false"
+            android:textColor="@color/gnt_gray"
+            app:backgroundTint="@color/gnt_white">
+        </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/add_tag_fab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:theme="@style/MyMaterialTheme"
+            android:gravity="center"
+            android:elevation="8dp"
+            android:text="Ekle"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/gnt_white"
+            app:backgroundTint="@color/colorPrimary">
+        </com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton>
+    </LinearLayout>
+</LinearLayout>
