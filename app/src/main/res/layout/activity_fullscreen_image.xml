@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#70000000">
+
+    <ImageView
+        android:id="@+id/food_fullscreen_icon_imageview"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/add_chat_image"/>
+
+    <TextView
+        android:id="@+id/food_fullscreen_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/food_fullscreen_icon_imageview"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Resim yükleniyor... Lütfen bekleyin!"
+        android:textColor="@android:color/white"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:id="@+id/food_fullscreen_image_imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <ImageView
+        android:id="@+id/back_button_imageView"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/custom_signup_images_background"
+        app:srcCompat="@drawable/back_arrow_icon"
+        android:clickable="true"
+        android:onClick="getBack"/>
+</RelativeLayout>
