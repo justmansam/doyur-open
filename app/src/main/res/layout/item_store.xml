@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:paddingTop="4dp"
+        android:paddingLeft="4dp"
+        android:paddingStart="4dp"
+        android:paddingRight="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp"
+        android:background="@drawable/custom_list_store_frame">
+
+        <ImageView
+            android:id="@+id/storeMainImageView"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            android:adjustViewBounds="true"
+            android:background="#25000000"/>
+
+        <ImageView
+            android:id="@+id/storeMainBackgroundImageView"
+            android:layout_width="156dp"
+            android:layout_height="156dp"
+            android:src="@drawable/custom_imageview_background" />
+
+        <TextView
+            android:id="@+id/storeNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/storeMainImageView"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@+id/storeMainImageView"
+            android:layout_toRightOf="@+id/storeMainImageView"
+            tools:text=""
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:requiresFadingEdge="horizontal"
+            android:fadingEdgeLength="32dp"
+            android:singleLine="true"/>
+
+        <TextView
+            android:id="@+id/storeInfoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/storeNameTextView"
+            android:layout_alignStart="@+id/storeNameTextView"
+            android:layout_alignLeft="@+id/storeNameTextView"
+            android:layout_alignBottom="@+id/storeMainBackgroundImageView"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
+            android:fadingEdgeLength="64dp"
+            android:requiresFadingEdge="vertical"
+            android:ellipsize="none"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/storeUidTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/storeNameTextView"
+            android:layout_alignStart="@+id/storeNameTextView"
+            android:layout_alignLeft="@+id/storeNameTextView"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:visibility="invisible"/>
+
+        <TextView
+            android:id="@+id/storeKeyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/storeUidTextView"
+            android:layout_alignStart="@+id/storeUidTextView"
+            android:layout_alignLeft="@+id/storeUidTextView"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:visibility="invisible"/>
+    </RelativeLayout>
+</LinearLayout>
