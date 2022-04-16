@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/bell_peppers" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/custom_main_screen_background" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_with_facebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/fake_login_with_facebook"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="160dp"
+        android:background="@drawable/custom_facebook_login_button"
+        android:fontFamily="sans-serif-black"
+        android:onClick="initFacebookLogin"
+        android:text="Facebook ile devam et"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/fake_login_with_google"
+        app:layout_constraintStart_toStartOf="@+id/fake_login_with_google"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="20dp"
+        android:layout_height="32dp"
+        android:layout_alignStart="@+id/fake_login_with_facebook"
+        android:layout_alignLeft="@+id/fake_login_with_facebook"
+        android:layout_alignTop="@+id/fake_login_with_facebook"
+        android:layout_alignBottom="@+id/fake_login_with_facebook"
+        android:elevation="10dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fake_login_with_facebook"
+        app:layout_constraintStart_toStartOf="@+id/fake_login_with_facebook"
+        app:layout_constraintTop_toTopOf="@+id/fake_login_with_facebook"
+        app:srcCompat="@drawable/facebook_icon" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/google_sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/fake_login_with_google"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/custom_google_login_button"
+        android:fontFamily="sans-serif-black"
+        android:onClick="initGoogleLogin"
+        android:text="Google ile devam et"
+        android:textAllCaps="false"
+        android:textColor="#84000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/fake_login_with_facebook" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="32dp"
+        android:layout_height="40dp"
+        android:layout_alignStart="@+id/fake_login_with_google"
+        android:layout_alignLeft="@+id/fake_login_with_google"
+        android:layout_alignTop="@+id/fake_login_with_google"
+        android:layout_alignBottom="@+id/fake_login_with_google"
+        android:elevation="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/fake_login_with_google"
+        app:layout_constraintStart_toStartOf="@+id/fake_login_with_google"
+        app:layout_constraintTop_toTopOf="@+id/fake_login_with_google"
+        app:srcCompat="@drawable/google_icon" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/custom_main_button"
+        android:fontFamily="sans-serif-black"
+        android:onClick="signUp"
+        android:text="E-posta ile kayıt ol"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fake_login_with_google" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignStart="@+id/fake_login_with_google"
+        android:layout_alignLeft="@+id/fake_login_with_google"
+        android:layout_alignTop="@+id/fake_login_with_google"
+        android:layout_alignBottom="@+id/fake_login_with_google"
+        android:elevation="10dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginLeft="14dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:srcCompat="@drawable/profile_user_email_icon" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Zaten hesabın var mı?"
+        android:textColor="#84000000"
+        app:layout_constraintEnd_toEndOf="@+id/button3"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custom_main_button2"
+        android:fontFamily="sans-serif-black"
+        android:onClick="signIn"
+        android:text="Giriş yap"
+        android:textAllCaps="false"
+        android:textColor="#1B5E20"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/terms_and_conditions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginRight="56dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_horizontal"
+        android:text="Kayıt olarak veya giriş yaparak Kullanım Koşulları ve Gizlilik Politikası'nı kabul etmiş olursun"
+        android:textColor="#90000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/bubblegum_sans"
+        android:text="doyur  v3.01.6"
+        android:textColor="#75000000"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
