@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="96dp"
+        android:layout_height="96dp">
+
+        <ImageView
+            android:id="@+id/userMapImageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:background="#CC000000"/>
+
+        <ImageView
+            android:id="@+id/userMapImageBackground"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/profile_user_name_icon" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/custom_imageview_background_2" />
+
+        <TextView
+            android:id="@+id/userMapUidTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/userMapImageView"
+            android:layout_alignLeft="@+id/userMapImageView"
+            android:layout_alignTop="@+id/userMapImageView"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:textSize="4sp"
+            android:text=""
+            android:textColor="@android:color/transparent" />
+    </RelativeLayout>
+</LinearLayout>
