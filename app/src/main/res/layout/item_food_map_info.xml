@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/foodMapImageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:adjustViewBounds="true"
+            android:background="#CC000000"/>
+
+        <ImageView
+            android:id="@+id/foodMapImageBackground"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="88dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/add_chat_image" />
+
+        <TextView
+            android:id="@+id/foodMapTextBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/foodMapImageBackground"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="Resim yükleniyor! Lütfen bekleyin..."
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:src="@drawable/custom_imageview_background_2" />
+
+        <TextView
+            android:id="@+id/foodMapNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/foodMapImageView"
+            android:layout_alignLeft="@+id/foodMapImageView"
+            android:layout_alignTop="@+id/foodMapImageView"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/custom_textview_background"
+            android:paddingStart="4dp"
+            android:paddingLeft="4dp"
+            android:paddingEnd="4dp"
+            android:paddingRight="4dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            tools:text="Name" />
+
+        <TextView
+            android:id="@+id/foodMapUidTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/foodMapNameTextView"
+            android:layout_alignStart="@+id/foodMapNameTextView"
+            android:layout_alignLeft="@+id/foodMapNameTextView"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="@android:color/transparent" />
+
+        <TextView
+            android:id="@+id/foodMapPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/foodMapImageView"
+            android:layout_alignRight="@+id/foodMapImageView"
+            android:layout_alignBottom="@+id/foodMapImageView"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/custom_textview_price_background"
+            android:paddingStart="4dp"
+            android:paddingLeft="4dp"
+            android:paddingEnd="4dp"
+            android:paddingRight="4dp"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            tools:text="Price" />
+    </RelativeLayout>
+</LinearLayout>
