@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BottomFragmentLobby">
+
+    <FrameLayout
+        android:id="@+id/cap_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="8dp"
+        android:background="#FFF">
+
+        <TextView
+            android:id="@+id/lobby_heading_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:textSize="16sp"
+            android:text="Mesaj Kutusu"
+            android:textAllCaps="true"
+            android:textColor="#80000000" />
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/lobby_progress_circle"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:indeterminate="true" />
+
+    <TextView
+        android:id="@+id/lobby_no_msg_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="sans-serif-medium"
+        android:text="Hiç mesajınız yok!"
+        android:textColor="@android:color/darker_gray"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/lobbyListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/cap_layout"
+        android:layout_above="@+id/lobby_ad_view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:divider="@android:color/transparent"
+        android:transcriptMode="disabled"
+        tools:listitem="@layout/item_lobby" />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/lobby_ad_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-1548831853802422/2183275282">
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>
