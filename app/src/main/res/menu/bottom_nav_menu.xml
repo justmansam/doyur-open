@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottomFragmentHome"
+        android:title="Ana Sayfa"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/bottomFragmentMap"
+        android:title="Harita"
+        android:icon="@drawable/ic_map"/>
+    <item
+        android:id="@+id/bottomFragmentDesire"
+        android:title="Olsa da Yesek"
+        android:icon="@drawable/ic_iwant"/>
+    <item
+        android:id="@+id/bottomFragmentLobby"
+        android:title="Mesajlar"
+        android:icon="@drawable/ic_messages"/>
+</menu>
