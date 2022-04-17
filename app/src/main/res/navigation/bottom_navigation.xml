@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/bottomFragmentHome">
+
+    <fragment
+        android:id="@+id/bottomFragmentHome"
+        android:name="com.neftisoft.doyur.BottomFragmentHome"
+        android:label="fragment_bottom_home"
+        tools:layout="@layout/fragment_bottom_home" />
+    <fragment
+        android:id="@+id/bottomFragmentMap"
+        android:name="com.neftisoft.doyur.BottomFragmentMap"
+        android:label="fragment_bottom_map"
+        tools:layout="@layout/fragment_bottom_map" />
+    <fragment
+        android:id="@+id/bottomFragmentDesire"
+        android:name="com.neftisoft.doyur.BottomFragmentDesire"
+        android:label="fragment_bottom_desire"
+        tools:layout="@layout/fragment_bottom_desire" />
+    <fragment
+        android:id="@+id/bottomFragmentLobby"
+        android:name="com.neftisoft.doyur.BottomFragmentLobby"
+        android:label="fragment_bottom_lobby"
+        tools:layout="@layout/fragment_bottom_lobby" />
+</navigation>
